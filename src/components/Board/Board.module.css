@@ -1,0 +1,14 @@
+.Board {
+    width: 50%;
+    margin: auto;
+    height: 500px;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Board div {
+    width: 33%;
+    height: 33%;
+    border: 1px solid black;
+}

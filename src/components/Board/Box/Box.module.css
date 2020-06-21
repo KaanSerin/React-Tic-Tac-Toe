@@ -1,0 +1,7 @@
+.Box {
+    background-color: pink;
+    font-size: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

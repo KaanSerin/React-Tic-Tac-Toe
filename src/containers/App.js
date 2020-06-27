@@ -56,7 +56,11 @@ class App extends Component {
         box7: null,
         box8: null,
       },
+      p1LastThreeMoves: [],
+      p2LastThreeMoves: [],
       currentPlayer: "X",
+      playerWon: null,
+      gameOver: false,
     });
   };
 

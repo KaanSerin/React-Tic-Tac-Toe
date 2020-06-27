@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Board from "../components/Board/Board";
 import Head from "../components/Head/Head";
+import { Provider } from "../Context/Context";
 
 import "./App.css";
 
@@ -33,6 +34,8 @@ class App extends Component {
     currentPlayer: "X",
     playerWon: null,
     gameOver: false,
+    xScore: 0,
+    oScore: 0,
   };
 
   boxClickHandler = (box) => {
@@ -64,6 +67,14 @@ class App extends Component {
     });
   };
 
+  resetScore = () => {
+    this.setState({
+      xScore: 0,
+      oScore: 0,
+    });
+    this.clearBoard();
+  };
+
   evaluateBoard = (currentPlayer, newBoard) => {
     const newCurrentPlayer = this.state.currentPlayer === "X" ? "O" : "X";
 
@@ -86,6 +97,14 @@ class App extends Component {
         newBoard[combo[0]] === newBoard[combo[2]]
       ) {
         const newPlayerWon = newBoard[combo[0]];
+        if (newPlayerWon === "X")
+          this.setState((prevState, props) => ({
+            xScore: prevState.xScore + 1,
+          }));
+        else
+          this.setState((prevState, props) => ({
+            oScore: prevState.oScore + 1,
+          }));
         this.setState({ gameOver: true, playerWon: newPlayerWon });
       }
     });
@@ -100,13 +119,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Head
-          gameOver={this.state.gameOver}
-          turn={this.state.currentPlayer}
-          clearBoard={this.clearBoard}
-          playerWon={this.state.playerWon}
-        />
-        <Board board={this.state.board} clickHandler={this.boxClickHandler} />
+        <Provider value={this.state}>
+          <Head
+            gameOver={this.state.gameOver}
+            turn={this.state.currentPlayer}
+            clearBoard={this.clearBoard}
+            playerWon={this.state.playerWon}
+            resetScore={this.resetScore}
+          />
+
+          <Board board={this.state.board} clickHandler={this.boxClickHandler} />
+        </Provider>
       </div>
     );
   }

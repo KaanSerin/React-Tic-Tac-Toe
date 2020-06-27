@@ -7,6 +7,7 @@ const menuButtons = (props) => (
     <MenuButton>Versus AI</MenuButton>
     <MenuButton>2 Players</MenuButton>
     <MenuButton click={props.resetBoard}>Reset Board</MenuButton>
+    <MenuButton click={props.resetScore}>Reset Score</MenuButton>
   </div>
 );
 

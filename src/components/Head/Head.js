@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Aux from "../../hoc/Aux";
 import MenuButtons from "../MenuButtons/MenuButtons";
+import ScoreBoard from "./ScoreBoard/ScoreBoard";
 
 const Head = (props) => {
   useEffect(() => {
@@ -10,12 +11,17 @@ const Head = (props) => {
   return (
     <Aux>
       <h1 style={{ color: "white", fontFamily: "Noto Sans" }}>TIC-TAC-TOE</h1>
-      <MenuButtons resetBoard={props.clearBoard} />
+      <MenuButtons
+        resetScore={props.resetScore}
+        resetBoard={props.clearBoard}
+      />
+      <ScoreBoard />
       <h2
         style={{
           color: "white",
           fontSize: props.gameOver ? "1.5rem" : "0",
           transition: "font-size .6s",
+          margin: "0",
         }}
       >
         Game Over! {props.playerWon} is Victorious!

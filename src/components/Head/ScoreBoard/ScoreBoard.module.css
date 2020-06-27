@@ -1,0 +1,7 @@
+.ScoreBoard {
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 28px;
+}

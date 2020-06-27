@@ -1,7 +1,7 @@
 .Board {
-    width: 50%;
+    width: 47%;
     margin: auto;
-    height: 500px;
+    height: 470px;
     background-color: rgb(238, 238, 238);
     display: flex;
     flex-wrap: wrap;

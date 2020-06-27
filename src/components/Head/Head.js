@@ -9,10 +9,14 @@ const Head = (props) => {
 
   return (
     <Aux>
-      <h1 style={{ color: "white" }}>TIC-TAC-TOE</h1>
+      <h1 style={{ color: "white", fontFamily: "Noto Sans" }}>TIC-TAC-TOE</h1>
       <MenuButtons resetBoard={props.clearBoard} />
       <h2
-        style={{ color: "white", display: props.gameOver ? "block" : "none" }}
+        style={{
+          color: "white",
+          fontSize: props.gameOver ? "1.5rem" : "0",
+          transition: "font-size .6s",
+        }}
       >
         Game Over! {props.playerWon} is Victorious!
       </h2>

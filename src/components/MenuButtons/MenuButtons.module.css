@@ -1,8 +1,9 @@
 .MenuButtons {
-    background-color: #aaa;
+    background-color: rgb(150, 216, 241);
     width: 50%;
-    height: 50px;
+    height: 60px;
     margin: 20px auto;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;

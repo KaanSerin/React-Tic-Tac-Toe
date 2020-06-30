@@ -8,9 +8,4 @@
 
 .Box:hover {
     background-color: rgb(130, 193, 245);
-    cursor: pointer;
-}
-
-.disabled:hover {
-    cursor: not-allowed;
 }

@@ -5,9 +5,12 @@ import { Consumer } from "../../../Context/Context";
 const box = (props) => (
   <Consumer>
     {(context) => {
-      const style = context.gameOver ? classes.disabled : "";
       return (
-        <div className={`${classes.Box} ${style}`} onClick={props.click}>
+        <div
+          style={{ cursor: context.gameOver ? "not-allowed" : "pointer" }}
+          className={classes.Box}
+          onClick={props.click}
+        >
           {props.children}
         </div>
       );

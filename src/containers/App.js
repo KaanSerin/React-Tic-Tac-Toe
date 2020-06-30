@@ -39,10 +39,14 @@ class App extends Component {
   };
 
   boxClickHandler = (box) => {
-    if (!this.state.gameOver && this.state.board[box] === null) {
-      const newBoard = this.state.board;
-      newBoard[box] = this.state.currentPlayer;
-      this.evaluateBoard(this.state.currentPlayer, newBoard);
+    if (!this.state.gameOver) {
+      if (this.state.board[box] === null) {
+        const newBoard = this.state.board;
+        newBoard[box] = this.state.currentPlayer;
+        this.evaluateBoard(this.state.currentPlayer, newBoard);
+      }
+    } else {
+      this.clearBoard();
     }
   };
 

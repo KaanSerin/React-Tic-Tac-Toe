@@ -1,14 +1,25 @@
 .Board {
     width: 47%;
     margin: auto;
-    height: 470px;
+    height: 500px;
     background-color: rgb(238, 238, 238);
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr)
 }
 
 .Board div {
-    width: 33%;
-    height: 33%;
     border: 1px solid black;
+}
+
+@media only screen and (max-width: 996px) {
+    .Board {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Board {
+        width: 95%;
+    }
 }

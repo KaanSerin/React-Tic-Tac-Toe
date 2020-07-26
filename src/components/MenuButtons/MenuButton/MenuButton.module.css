@@ -14,7 +14,10 @@
     width: 150px;
     font-size: 16px;
     font-weight: 500;
+
+    margin: 5px auto;
     padding: 10px;
+
     box-shadow: 1px 1px 10px 0px #4e4e4e;
     -webkit-box-shadow: 1px 1px 10px 0px #4e4e4e;
     -moz-box-shadow: 1px 1px 10px 0px #4e4e4e;
@@ -38,4 +41,12 @@
     -moz-border-radius: 20px;
     border-radius: 20px;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 996px) {
+    .btnHead {
+        padding: 10px;
+        min-width: 80px;
+        max-width: 120px;
+    }
 }

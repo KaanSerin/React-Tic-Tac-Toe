@@ -1,10 +1,24 @@
 .MenuButtons {
     background-color: rgb(150, 216, 241);
     width: 50%;
-    height: 60px;
     margin: 20px auto;
+    padding: 12px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 996px) {
+    .MenuButtons {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .MenuButtons {
+        width: 90%;
+        border-radius: 0;
+    }
 }
